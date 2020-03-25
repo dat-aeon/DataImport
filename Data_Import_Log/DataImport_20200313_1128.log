@@ -1,0 +1,12 @@
+11:28:36.442	PROCESS START
+2020-03-13 11:28:37.120  WARN 2704 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'importCustomerInfoMapper' and 'mm.aeon.com.vcs.mapper.ImportCustomerInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-03-13 11:28:37.124  WARN 2704 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'importPaymentInfoMapper' and 'mm.aeon.com.vcs.mapper.ImportPaymentInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-03-13 11:28:37.124  WARN 2704 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'NRCInfoMapper' and 'mm.aeon.com.vcs.mapper.NRCInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-03-13 11:28:37.125  WARN 2704 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[mm.aeon.com.vcs.mapper]' package. Please check your configuration.
+11:30:31.456	[20200313_1127_DataExport_20191206_164343.csv]	date convert error.
+11:30:41.953	[20200313_1127_DataExport_20191206_164343.csv]	[Record No. 1] Invalid [DoB = 19930101] in {AgreementFinancialAmt2=50000, AgreementFinancialAmt1=250000, Salary=43757428, AgreementNo1=2020-1-0000655691-2, JudgementDate1=20200312, AgreementNo2=2020-1-0000655691-3, JudgementDate2=20200312, Gender=2, CustomerNo=1000-221227100-1, JudgementResult1=1, CompanyName=DAT, PhoneNo=9655691691, PaymentDate2=20190313, PaymentDate1=20190313, CustomerName=KYAW GYI NYI MA, MembercardID=34234444, DelFlag=0, AgreementQRShow2=2, AgreementQRShow1=2, AgreementFinancialStatus2=1, ApplicationFormNo2=2003000027, AgreementFinancialStatus1=1, ApplicationFormNo1=2003000022, AgreementFinancialTerm1=18, AgreementFinancialTerm2=6, JudgementResult2=1, DoB=19930101, TownshipAddress=HLEDAN, NRC=12/LAMANA(N)655691}
+11:30:41.964	[20200313_1127_DataExport_20191206_164343.csv]	CSV file moving completed 
+11:30:41.964	[20200313_1127_DataExport_20191206_164343.csv]	CSV file creation completed.
+11:30:41.964	PROCESS END
+11:30:41.983	There is no CSV file(s).
+11:30:41.983	PROCESS END

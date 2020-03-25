@@ -1,0 +1,9 @@
+11:33:22.31	PROCESS START
+2020-03-13 11:33:22.649  WARN 8460 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'importCustomerInfoMapper' and 'mm.aeon.com.vcs.mapper.ImportCustomerInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-03-13 11:33:22.654  WARN 8460 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'importPaymentInfoMapper' and 'mm.aeon.com.vcs.mapper.ImportPaymentInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-03-13 11:33:22.655  WARN 8460 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'NRCInfoMapper' and 'mm.aeon.com.vcs.mapper.NRCInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-03-13 11:33:22.655  WARN 8460 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[mm.aeon.com.vcs.mapper]' package. Please check your configuration.
+11:35:44.96	[DataExport_20191206_164343.csv]	CSV file moving completed 
+11:35:44.102	PROCESS END
+11:35:44.127	There is no CSV file(s).
+11:35:44.127	PROCESS END

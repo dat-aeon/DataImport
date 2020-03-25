@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="mm.aeon.com.vcs.mapper.ImportPaymentInfoMapper">
+
+	
+	<update id="updatePaymentInfo" parameterType="mm.aeon.com.vcs.domain.PaymentInfo">
+	    update vcs.cust_agreement_list
+	    <set>
+	      <if test="paymentDate != null">
+	        last_payment_date = #{paymentDate,jdbcType=TIMESTAMP},
+	      </if>
+	        updated_time = now(),
+	    </set>
+	    where agreement_no = #{agreementCd,jdbcType=VARCHAR}
+  	</update>
+  	
+  	<select id="checkExistCount" resultType="java.lang.Integer" parameterType="mm.aeon.com.vcs.domain.PaymentInfo">
+		select 
+			count(*)
+		from
+			cust_agreement_list
+		where
+			agreement_no = #{agreementCd,jdbcType=VARCHAR}
+  	</select>
+	
+</mapper>

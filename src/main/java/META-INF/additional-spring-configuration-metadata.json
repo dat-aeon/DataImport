@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "PRINT_ERROR_TRACE",
+    "type": "java.lang.String",
+    "description": "A description for 'PRINT_ERROR_TRACE'"
+  },
+  {
+    "name": "SOURCE_CSV_PATH",
+    "type": "java.lang.String",
+    "description": "A description for 'SOURCE_CSV_PATH'"
+  },
+  {
+    "name": "SUCCESS_CSV_PATH",
+    "type": "java.lang.String",
+    "description": "A description for 'SUCCESS_CSV_PATH'"
+  },
+  {
+    "name": "FAILED_CSV_PATH",
+    "type": "java.lang.String",
+    "description": "A description for 'FAILED_CSV_PATH'"
+  }
+]}

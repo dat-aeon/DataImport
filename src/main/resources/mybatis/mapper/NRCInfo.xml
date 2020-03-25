@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mm.aeon.com.vcs.mapper.NRCInfoMapper">
+
+	<select id="selectSataeDivisionInfo" resultType="int">
+		SELECT state_id
+		FROM vcs.state_division_info
+	</select>
+
+	<insert id="insertTownshipInfo" useGeneratedKeys="true"
+		parameterType="java.util.List">
+		INSERT INTO vcs.township_info(
+		township_code, township_name, state_id,
+		created_by, updated_by, created_time,
+		updated_time)
+		VALUES
+		<foreach collection="list" item="ti" open="(" close=")"
+			separator=") , (">
+			#{ti.townshipCode},
+			#{ti.townshipCode},
+			#{ti.stateId},
+			'IMPORT',
+			'IMPORT',
+			now(),
+			now()
+		</foreach>
+		ON CONFLICT (state_id,township_code) DO NOTHING;
+	</insert>
+
+</mapper>

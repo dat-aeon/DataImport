@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="mm.aeon.com.vcs.mapper.ImportCustomerInfoMapper">
+
+	<insert id="insertUpdateCustomerInfo" keyColumn="import_customer_info_id"
+		keyProperty="customerId" useGeneratedKeys="true"
+		parameterType="mm.aeon.com.vcs.domain.ImportCustomerInfo">
+		INSERT INTO vcs.import_customer_info 
+		(
+			customer_no, phone_no, name, dob, nrc_no, membercard_id, membercard_status, salary, company_name, address, gender, created_time, updated_time
+		) VALUES (
+			#{customerNo}, #{phoneNo}, #{name}, #{dob}, #{nrcNo}, #{memberCardId}, #{memberCardStatus}, #{salary}, #{companyName}, #{township}, #{gender}, #{createdTime}, #{updatedTime}
+		)
+		ON CONFLICT (customer_no) DO UPDATE SET
+			phone_no = EXCLUDED.phone_no, name = EXCLUDED.name, dob = EXCLUDED.dob, nrc_no = EXCLUDED.nrc_no, membercard_id=EXCLUDED.membercard_id, membercard_status=EXCLUDED.membercard_status, salary = EXCLUDED.salary, 
+			company_name = EXCLUDED.company_name, address = EXCLUDED.address, gender = EXCLUDED.gender,	updated_time = EXCLUDED.updated_time;
+	</insert>
+	
+	<insert id="insertUpdateCustomerAgreeList" keyColumn="cust_agreement_id"
+		keyProperty="custAgreementId" useGeneratedKeys="true"
+		parameterType="java.util.List">
+		<foreach collection="list" item="cust">
+			INSERT INTO vcs.cust_agreement_list	(
+				import_customer_id, agreement_no, qr_show, financial_status, financial_amt, financial_term, created_time, updated_time, application_no , judgement_status, judgement_date, last_payment_date
+			)
+			VALUES (
+				#{cust.importCustomerId}, #{cust.agreementNo}, #{cust.qrShow}, #{cust.financialStatus}, #{cust.financialAmt}, #{cust.financialTerm}, #{cust.createdTime}, #{cust.updatedTime}, #{cust.applicationNo},#{cust.judgementResult},#{cust.judgementDate},#{cust.paymentDate}
+			)
+			ON CONFLICT (application_no)
+			DO UPDATE SET
+				qr_show = EXCLUDED.qr_show, financial_status = EXCLUDED.financial_status, financial_amt = EXCLUDED.financial_amt, financial_term = EXCLUDED.financial_term, updated_time = EXCLUDED.updated_time, agreement_no = EXCLUDED.agreement_no, judgement_status = EXCLUDED.judgement_status, judgement_date = EXCLUDED.judgement_date, last_payment_date = EXCLUDED.last_payment_date;;
+		</foreach>
+	</insert>
+	
+	<update id="updateCustomerInfo" parameterType="mm.aeon.com.vcs.domain.CustomerInfoDto">
+    update vcs.customer_info
+    <set>
+      <if test="phoneNo != null">
+        phone_no = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedBy != null">
+        updated_by = #{updatedBy,jdbcType=VARCHAR},
+      </if>
+        updated_time = now(),
+    </set>
+    where customer_no = #{customerNo,jdbcType=VARCHAR}
+  </update>
+	
+</mapper>
